@@ -103,6 +103,14 @@ class CityController extends Controller
     {
         // Prepare data
         $output = [];
+        if ($request->hasFile('image')) {
+            $file = $request->file('image');
+            $output[] = [
+                'name' => 'image',
+                'contents' => file_get_contents($file->getPathname()),
+                'filename' => basename($file->getPathname()),
+            ];
+        }
 
         $output[] = ['name' => 'name', 'contents' => $request->name];
         $output[] = ['name' => 'country_id', 'contents' => $request->country];
@@ -144,6 +152,14 @@ class CityController extends Controller
 
         // Prepare data
         $output = [];
+        if ($request->hasFile('image')) {
+            $file = $request->file('image');
+            $output[] = [
+                'name' => 'image',
+                'contents' => file_get_contents($file->getPathname()),
+                'filename' => basename($file->getPathname()),
+            ];
+        }
 
         $output[] = ['name' => 'name', 'contents' => $request->name];
         $output[] = ['name' => 'country_id', 'contents' => $request->country];
@@ -152,7 +168,7 @@ class CityController extends Controller
         $client = new \GuzzleHttp\Client();
         $url = \Config::get('constants.API_URL') . "/v1/city/" . $id . "/update";
         $response = $client->post($url, [
-            'http_errors' => false,
+            'http_errors' => true,
             'multipart' => $output
             ,
             'headers' => [

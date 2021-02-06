@@ -86,7 +86,7 @@ class RentController extends Controller
         $client = new \GuzzleHttp\Client();
         $url = \Config::get('constants.API_URL') . "/v1/rent/create";
         $response = $client->post($url, [
-            'http_errors' => true,
+            'http_errors' => false,
             'multipart' => $output
             ,
             'headers' => [

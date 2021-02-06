@@ -53,7 +53,7 @@ Route::group(['middleware' => 'checklogintoken'], function () {
 /* Route Tenants */
     Route::group(['prefix' => 'tenant'], function () {
         Route::get('/', 'frontend\TenantController@all')->name('all-tenants');
-        Route::get('/create', 'frontend\TenantController@all')->name('create-tenant');
+        Route::get('/create', 'frontend\TenantController@create')->name('create-tenant');
         Route::get('/{id}', 'frontend\TenantController@view')->name('view-tenant');
         Route::get('/{id}/delete', 'frontend\TenantController@delete')->name('delete-tenant');
         Route::get('/{id}/edit', 'frontend\TenantController@edit')->name('edit-tenant');

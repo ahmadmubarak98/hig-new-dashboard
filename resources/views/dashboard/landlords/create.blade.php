@@ -1,6 +1,6 @@
 @extends('layouts/contentLayoutMaster')
 
-@section('title', 'Create New Country')
+@section('title', 'Create New Landlord')
 
 @section('vendor-style')
     <link rel="stylesheet" href="{{ asset('vendors/css/tables/datatable/responsive.bootstrap.min.css') }}">
@@ -10,7 +10,7 @@
     <section class="">
         <div class="mb-2 row">
             <div class="col-sm-12 col-md-12 col-lg-12">
-                <a href="/management/country">
+                <a href="/management/landlord">
                     <button class="mr-1 mb-1 bg-gradient-primary btn btn-none">VIEW ALL</button>
                 </a>
             </div>
@@ -37,7 +37,7 @@
             <div class="col-md-12 col-lg-6 ">
                 <div class="card">
                     <div class="card-body">
-                        <form class="form" method="post" action="/management/country" enctype="multipart/form-data">
+                        <form class="form" method="post" action="/management/landlord" enctype="multipart/form-data">
                             {{ csrf_field() }}
                             <div class="row">
                                 <div class="col-md-6 col-12">

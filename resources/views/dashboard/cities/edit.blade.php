@@ -66,9 +66,17 @@
                                         <select name="country" id="country" class="form-control"
                                             value="{{ old('country') }}">
                                             @foreach ($countries as $item)
-                                                <option value="{{ $item['id'] }}" {{$item['id'] == $responseBody['country']['id'] ? 'selected="selected"' : ''}}>{{ $item['name'] }}</option>
+                                                <option value="{{ $item['id'] }}"
+                                                    {{ $item['id'] == $responseBody['country']['id'] ? 'selected="selected"' : '' }}>
+                                                    {{ $item['name'] }}</option>
                                             @endforeach
                                         </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-12">
+                                    <div class="form-group">
+                                        <label for="image">Image</label>
+                                        <input type="file" name="image" id="image" class="form-control" />
                                     </div>
                                 </div>
                                 <div class="col-12">

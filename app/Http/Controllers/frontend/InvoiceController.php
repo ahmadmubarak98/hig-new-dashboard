@@ -104,7 +104,7 @@ class InvoiceController extends Controller
         $client = new \GuzzleHttp\Client();
         $url = \Config::get('constants.API_URL') . "/v1/invoice/create";
         $response = $client->post($url, [
-            'http_errors' => true,
+            'http_errors' => false,
             'multipart' => $output
             ,
             'headers' => [

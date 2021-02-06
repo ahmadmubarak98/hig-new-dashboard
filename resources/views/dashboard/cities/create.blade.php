@@ -58,6 +58,12 @@
                                         </select>
                                     </div>
                                 </div>
+                                 <div class="col-md-6 col-12">
+                                    <div class="form-group">
+                                        <label for="image">Image</label>
+                                        <input type="file" name="image" id="image" class="form-control"/>
+                                    </div>
+                                </div>
                                 <div class="col-12">
                                     <button type="submit" class="btn btn-primary mr-1">Create</button>
                                     <button type="reset" class="btn btn-outline-secondary">Reset</button>
